@@ -4,10 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
-import org.dozer.DozerBeanMapper;
-import org.dozer.Mapper;
 import org.junit.Test;
-import org.springframework.beans.BeanUtils;
 
 import com.mylab.cromero.dto.BeanAnidado;
 import com.mylab.cromero.dto.BeanAnidado2;

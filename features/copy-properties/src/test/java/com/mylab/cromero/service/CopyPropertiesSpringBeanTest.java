@@ -19,7 +19,7 @@ public class CopyPropertiesSpringBeanTest {
 
    
 	//could not copy diferent dto thowrs exception because is accessed by reflection
-	@Test(expected = BeansException.class)
+	@Test
     public void testCopyPropertiesDozzerSimple() throws Exception {
 		BeanOrigen tb = new BeanOrigen();
 		tb.setName("rod");
@@ -51,6 +51,12 @@ public class CopyPropertiesSpringBeanTest {
 		tb.setVectorBeanAnidado(new BeanAnidado[]{testBeanAnidado2,testBeanAnidado3});
 		
 		BeanDestino tb2 = MapperBeanUtil.springMapper(tb);
+		
+		assertTrue("nombre copiado", tb2.getName().equals(tb.getName()));
+		assertTrue("country copiado", tb2.getCountry().equals(tb.getCountry()));
+		assertTrue("edad copiada", tb2.getEdad() == tb.getEdad());
+		assertTrue("subnivel country", tb2.getBeanAnidado()==null);
+		
 		
     }
 
