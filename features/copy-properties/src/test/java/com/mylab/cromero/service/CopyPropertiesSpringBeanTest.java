@@ -31,7 +31,6 @@ public class CopyPropertiesSpringBeanTest {
 		testBeanAnidado.setEdad(11);
 		testBeanAnidado.setOtroValor("manolitooo");
 		tb.setBeanAnidado(testBeanAnidado);
-		
 		BeanAnidado testBeanAnidado2 = new BeanAnidado();
 		testBeanAnidado2.setName("pepe");
 		testBeanAnidado2.setCountry("papplona");
