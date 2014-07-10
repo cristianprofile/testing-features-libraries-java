@@ -9,7 +9,6 @@
 	<artifactId>copy-properties</artifactId>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
