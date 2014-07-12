@@ -5,16 +5,25 @@ import static org.junit.Assert.assertTrue;
 import java.util.ArrayList;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.mylab.cromero.dto.BeanAnidado;
 import com.mylab.cromero.dto.BeanAnidado2;
 import com.mylab.cromero.dto.BeanDestino;
 import com.mylab.cromero.dto.BeanOrigen;
 import com.mylab.cromero.mapper.MapperBeanUtil;
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = "classpath*:/applicationContext.xml")
 public class CopyPropertiesDozerTest {
 
+	
    
+	 @Autowired
+	private MapperBeanUtil mapperBeanUtil;
+	
     
     @Test
     public void testCopyPropertiesDozzerSimple() throws Exception {
@@ -46,7 +55,7 @@ public class CopyPropertiesDozerTest {
 		
 		tb.setVectorBeanAnidado(new BeanAnidado[]{testBeanAnidado2,testBeanAnidado3});
 		
-		BeanDestino tb2 = MapperBeanUtil.dozzerMapper(tb);
+		BeanDestino tb2 = mapperBeanUtil.dozzerMapper(tb);
 		assertTrue("nombre copiado", tb2.getName().equals(tb.getName()));
 		assertTrue("country copiado", tb2.getCountry().equals(tb.getCountry()));
 		assertTrue("edad copiada", tb2.getEdad() == tb.getEdad());

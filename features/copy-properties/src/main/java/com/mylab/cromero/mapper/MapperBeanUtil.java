@@ -6,15 +6,16 @@ import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
+import org.springframework.stereotype.Component;
 
 import com.mylab.cromero.dto.BeanDestino;
 import com.mylab.cromero.dto.BeanOrigen;
 
-
+@Component
 public  class MapperBeanUtil {
 	
 	
-	public static BeanDestino dozzerMapper(BeanOrigen beanOrigen)
+	public BeanDestino dozzerMapper(BeanOrigen beanOrigen)
 	{
 		
 		Mapper mapper = new DozerBeanMapper();
@@ -22,7 +23,7 @@ public  class MapperBeanUtil {
 		return beanDestino;
 	}
 	
-	public static BeanDestino springMapper(BeanOrigen beanOrigen) throws BeansException 
+	public  BeanDestino springMapper(BeanOrigen beanOrigen) throws BeansException 
 	{
 		
 		BeanDestino beanDestino = new BeanDestino();
