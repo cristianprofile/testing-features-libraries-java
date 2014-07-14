@@ -24,7 +24,7 @@ public class CopyPropertiesSpringBeanTest {
 	@Autowired
 	private MapperBeanUtil mapperBeanUtil;
 
-	// could not copy diferent dto thowrs exception because is accessed by
+	// could not copy different dto thowrs exception because is accessed by
 	// reflection
 	@Test
 	public void testCopyPropertiesDozzerSimple() throws Exception {
